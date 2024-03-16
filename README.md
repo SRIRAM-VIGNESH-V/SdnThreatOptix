@@ -28,7 +28,16 @@ While this DoS attack is ongoing, a normal flow from 'h2' to 'h4' may fail due t
 64 bytes from 10.0.0.4: icmp_seq=46 ttl=64 time=0.125 ms
 ```
 ### From h2 to h4 during DOS:<br>
-![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/9073d3f1-3832-4439-8604-363f92cd9ff5)<br>
+```
+root@test:-* ping -W 0.1 10.0.0.4
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=3 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=4 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=5 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=6 Destination Host Unreachable
+```
 ## Bandwidth limitation: 
 To impose bandwidth limitations on Mininet channels, you can use the TCLink parameter. This allows you to set network capacity limits independently of the host machine's capabilities. Below is an example of how to create a Mininet network with bandwidth restrictions:<br>
 ```python
