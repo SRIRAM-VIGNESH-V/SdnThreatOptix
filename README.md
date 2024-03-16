@@ -58,7 +58,25 @@ net.addLink(s3, h6, bw = 10)
 thus , links with bandwidth restrictions have added.
 
 ## Telegraph:
-We are going to run a telegraf instance on mininet's Host 4 whose input plugin will gather ICMP data and whose output will be a file in the VM's home directory. We'll be running a second telegraf instance in the host VM whose input will be the file containing Host 4's output and whose output will be the Influx DB hosted in the controller VM. This architecture leverages the shared filesystem and uses a second telegraf instance as a mere proxy between one of mininet's internal hosts and the controller VM, both living in entirely different 
+We are going to run a telegraf instance on mininet's Host 4 whose input plugin will gather ICMP data and whose output will be a file in the VM's home directory. We'll be running a second telegraf instance in the host VM whose input will be the file containing Host 4's output and whose output will be the Influx DB hosted in the controller VM. This architecture leverages the shared filesystem and uses a second telegraf instance as a mere proxy between one of mininet's internal hosts and the controller VM, both living in entirely different networks.
+## Interface telegraph to influxDB :
+### Official documentation :
+https://docs.influxdata.com/influxdb/v2/write-data/no-code/use-telegraf/
+### InfluxDB ping plguing for Telegraph interface :
+https://docs.influxdata.com/influxdb/cloud/reference/cli/influx/ping/
+
+## Method of detecting Dos:
+To detect a Denial of Service (DoS) attack, we can utilize the derivative of the rate of incoming packets. This method focuses on detecting sudden changes in incoming message rates, which are indicative of a potential attack, rather than solely relying on the volume of incoming packets.To implement this approach, you can use the provided Python script `data_gathering.py`. Running python `data_gathering.py 0` will generate `ICMP_data_class_0.csv` while conducting normal ICMP ping operations, while python `data_gathering.py 1` will produce `ICMP_data_class_1.csv` during a simulated DoS attack using Hping3.These generated CSV files can then be analyzed to identify patterns and anomalies in packet rates, enabling the detection of DoS attacks based on deviations from normal network behavior.
+## Data gathering:
+`data_gathering.py` is a simple python script that uses influx dB’s python API to read the data and prepare a CSV (Comma Separated Values) to later be read by the script implementing to train ML model for DOS detection.
+## Model Training:
+With the obtained ICMP datasets as inputs, the next step involves training a supervised Machine Learning model, specifically an XGBoost model, to classify the derivative of the pings as either normal or indicative of a DoS attack. For detailed information on the model training process, including data preprocessing, feature selection, and model evaluation, please refer to the Jupyter notebook file provided.
+The Jupyter notebook file contains documentation and code illustrating each step of the model training process. By following the instructions outlined in the notebook, you can gain insights into the methodology used to develop and evaluate the XGBoost model for DoS detection based on derivative of ping data.In the repository, you will find the `XGBoost.dat file`, which contains the trained XGBoost model parameters. This file is crucial for deploying the trained model for inference or further evaluation purposes. The trained model encapsulated within `XGBoost.dat` is capable of classifying the derivative of ping data into either normal or indicative of a DoS attack with a high degree of accuracy.
+
+
+
+
+
 
 
 
