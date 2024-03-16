@@ -14,12 +14,12 @@ This command will send a flood of ICMP echo request packets (ping) to host 'h4' 
 While this DoS attack is ongoing, a normal flow from 'h2' to 'h4' may fail due to the increased network traffic and potential packet loss caused by the attack.<br>
 ### Normal flow:<br>
 ```
-64 bytes from 10.0.0.4: icmp_seq=14 ttl=64 time=881 ms
-64 bytes from 10.0.0.4: icmp_seq=23 ttl=64 time=1863 ms
-64 bytes from 10.0.0.4: icmp_seq=35 ttl=64 time=1165 ms
-64 bytes from 10.0.0.4: icmp_seq=39 ttl=64 time=2542 ms
-64 bytes from 10.0.0.4: icmp_seq=40 ttl=64 time=1473 ms
-64 bytes from 10.0.0.4: icmp_seq=41 ttl=64 time=464 ms
+64 bytes from 10.0.0.4: icmp_seq=14 ttl=64 time=0.881 ms
+64 bytes from 10.0.0.4: icmp_seq=23 ttl=64 time=0.1863 ms
+64 bytes from 10.0.0.4: icmp_seq=35 ttl=64 time=0.1165 ms
+64 bytes from 10.0.0.4: icmp_seq=39 ttl=64 time=0.2542 ms
+64 bytes from 10.0.0.4: icmp_seq=40 ttl=64 time=0.1473 ms
+64 bytes from 10.0.0.4: icmp_seq=41 ttl=64 time=0.464 ms
 64 bytes from 10.0.0.4: icmp_seq=42 ttl=64 time=0.050 ms
 64 bytes from 10.0.0.4: icmp_seq=43 ttl=64 time=0.063 ms
 64 bytes from 10.0.0.4: icmp_seq=44 ttl=64 time=0.040 ms
