@@ -13,9 +13,9 @@ sudo hping3 -V -1 -d 1400 --faster -c 1000 -q --rand-source h4
 ```
 This command will send a flood of ICMP echo request packets (ping) to host 'h4' from host 'h1' with a bogus payload. The '-V' flag enables verbose output, '-1' specifies ICMP protocol, '-d 1400' sets the data size to 1400 bytes, '--faster' increases the transmission speed, '-c 1000' specifies to send 1000 packets, '-q' suppresses output, and '--rand-source' sets a random source IP address for each packet.<br>
 While this DoS attack is ongoing, a normal flow from 'h2' to 'h4' may fail due to the increased network traffic and potential packet loss caused by the attack.<br>
-Normal flow:<br>
-![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/767a1c19-df99-4636-bf06-8fc37432ba1f)
-From h2 to h4 during DOS:<br>
+### Normal flow:<br>
+![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/767a1c19-df99-4636-bf06-8fc37432ba1f)<br>
+### From h2 to h4 during DOS:<br>
 ![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/9073d3f1-3832-4439-8604-363f92cd9ff5)<br>
 
 
