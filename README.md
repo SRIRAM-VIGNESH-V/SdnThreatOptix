@@ -6,8 +6,7 @@ This project is a derivative of my previous project,`SdnInfraOptix` which focuse
 
 ## Hping 3
 ![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/fc99e2cc-de44-46e5-aa1d-6e772ea9eb4e)<br>
-Hping3 is a versatile command-line network tool designed for packet manipulation and testing purposes. With support for ICMP, UDP, and TCP packets, it serves as a valuable tool for diagnostics, scanning, and security testing within network environments. Notably, Hping3 is adept at simulating Denial of Service (DoS) attacks, making it a preferred choice for network administrators and security professionals seeking to assess and analyze network behavior effectively.
-To simulate a Denial of Service (DoS) attack using Hping3, you can execute the following command:<br>
+Hping3 is a versatile command-line network tool designed for packet manipulation and testing purposes. With support for ICMP, UDP, and TCP packets, it serves as a valuable tool for diagnostics, scanning, and security testing within network environments. Notably, Hping3 is adept at simulating Denial of Service (DoS) attacks, making it a preferred choice for network administrators and security professionals seeking to assess and analyze network behavior effectively.To simulate a Denial of Service (DoS) attack using Hping3, you can execute the following command:<br>
 ```
 sudo hping3 -V -1 -d 1400 --faster -c 1000 -q --rand-source h4
 ```
