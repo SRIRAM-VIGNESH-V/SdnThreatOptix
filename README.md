@@ -14,7 +14,19 @@ sudo hping3 -V -1 -d 1400 --faster -c 1000 -q --rand-source h4
 This command will send a flood of ICMP echo request packets (ping) to host 'h4' from host 'h1' with a bogus payload. The '-V' flag enables verbose output, '-1' specifies ICMP protocol, '-d 1400' sets the data size to 1400 bytes, '--faster' increases the transmission speed, '-c 1000' specifies to send 1000 packets, '-q' suppresses output, and '--rand-source' sets a random source IP address for each packet.<br>
 While this DoS attack is ongoing, a normal flow from 'h2' to 'h4' may fail due to the increased network traffic and potential packet loss caused by the attack.<br>
 ### Normal flow:<br>
-![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/767a1c19-df99-4636-bf06-8fc37432ba1f)<br>
+```
+64 bytes from 10.0.0.4: icmp_seq=14 ttl=64 time=881 ms
+64 bytes from 10.0.0.4: icmp_seq=23 ttl=64 time=1863 ms
+64 bytes from 10.0.0.4: icmp_seq=35 ttl=64 time=1165 ms
+64 bytes from 10.0.0.4: icmp_seq=39 ttl=64 time=2542 ms
+64 bytes from 10.0.0.4: icmp_seq=40 ttl=64 time=1473 ms
+64 bytes from 10.0.0.4: icmp_seq=41 ttl=64 time=464 ms
+64 bytes from 10.0.0.4: icmp_seq=42 ttl=64 time=0.050 ms
+64 bytes from 10.0.0.4: icmp_seq=43 ttl=64 time=0.063 ms
+64 bytes from 10.0.0.4: icmp_seq=44 ttl=64 time=0.040 ms
+64 bytes from 10.0.0.4: icmp_seq=45 ttl=64 time=0.181 ms
+64 bytes from 10.0.0.4: icmp_seq=46 ttl=64 time=0.125 ms
+```
 ### From h2 to h4 during DOS:<br>
 ![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/9073d3f1-3832-4439-8604-363f92cd9ff5)<br>
 ## Bandwidth limitation: 
