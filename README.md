@@ -57,7 +57,8 @@ net.addLink(s3, h6, bw = 10)
 ```
 thus , links with bandwidth restrictions have added.
 
-
+## Telegraph:
+We are going to run a telegraf instance on mininet's Host 4 whose input plugin will gather ICMP data and whose output will be a file in the VM's home directory. We'll be running a second telegraf instance in the host VM whose input will be the file containing Host 4's output and whose output will be the Influx DB hosted in the controller VM. This architecture leverages the shared filesystem and uses a second telegraf instance as a mere proxy between one of mininet's internal hosts and the controller VM, both living in entirely different 
 
 
 
