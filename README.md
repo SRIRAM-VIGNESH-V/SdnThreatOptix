@@ -17,6 +17,27 @@ While this DoS attack is ongoing, a normal flow from 'h2' to 'h4' may fail due t
 ![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/767a1c19-df99-4636-bf06-8fc37432ba1f)<br>
 ### From h2 to h4 during DOS:<br>
 ![image](https://github.com/SRIRAM-VIGNESH-V/SdnThreatOptix/assets/159048515/9073d3f1-3832-4439-8604-363f92cd9ff5)<br>
+## Bandwidth limitation: 
+To impose bandwidth limitations on Mininet channels, you can use the TCLink parameter. This allows you to set network capacity limits independently of the host machine's capabilities. Below is an example of how to create a Mininet network with bandwidth restrictions:<br>
+```python
+net = Mininet(topo = None,
+              build = False,
+              host = CPULimitedHost,
+              link = TCLink,
+              ipBase = '10.0.0.0/8')
+net.addLink(s1, h1, bw = 10)
+net.addLink(s1, h2, bw = 10)
+net.addLink(s1, s2, bw = 5, max_queue_size = 500)
+net.addLink(s3, s2, bw = 5, max_queue_size = 500)
+net.addLink(s2, h3, bw = 10)
+net.addLink(s2, h4, bw = 10)
+net.addLink(s3, h5, bw = 10)
+net.addLink(s3, h6, bw = 10)
+```
+thus , links with bandwidth restrictions have added.
+
+
+
 
 
 
