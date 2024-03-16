@@ -71,6 +71,8 @@ To detect a Denial of Service (DoS) attack, we can utilize the derivative of the
 ## Model Training:
 With the obtained ICMP datasets as inputs, the next step involves training a supervised Machine Learning model, specifically an XGBoost model, to classify the derivative of the pings as either normal or indicative of a DoS attack. For detailed information on the model training process, including data preprocessing, feature selection, and model evaluation, please refer to the Jupyter notebook file provided.
 The Jupyter notebook file contains documentation and code illustrating each step of the model training process. By following the instructions outlined in the notebook, you can gain insights into the methodology used to develop and evaluate the XGBoost model for DoS detection based on derivative of ping data.In the repository, you will find the `XGBoost.dat file`, which contains the trained XGBoost model parameters. This file is crucial for deploying the trained model for inference or further evaluation purposes. The trained model encapsulated within `XGBoost.dat` is capable of classifying the derivative of ping data into either normal or indicative of a DoS attack with a high degree of accuracy.
+## LIcense:
+MIT License - Github
 
 
 
